@@ -1,0 +1,8 @@
+[Unit]
+Description=Prometheus Service
+After=network.target
+[Service]
+ExecStart=/home/ubuntu/prometheus/prometheus-2.27.1.linux-amd64/prometheus	--config.file=/home/ubuntu/prometheus/prometheus-2.27.1.linux-amd64/prometheus.yml 
+Restart=no
+[Install]
+WantedBy=multi-user.target

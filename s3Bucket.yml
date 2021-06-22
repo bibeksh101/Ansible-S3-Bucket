@@ -1,0 +1,23 @@
+---
+- name: Create a new S3 Bucket
+  hosts: localhost
+  connection: local
+
+  vars_files:
+    - credentials.yml
+
+  tasks:
+    - name: New S3 Bucket
+      s3_bucket:
+        name: bibekmybucket06212102
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        state: absent
+        region: us-east-2
+    - name: New S3 Bucket
+      s3_bucket:
+        name: bibekmybucket062121
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        state: absent
+        region: us-east-2
